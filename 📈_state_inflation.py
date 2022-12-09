@@ -110,7 +110,7 @@ st.title("United States Construction Inflation")
 
 # INITIALIZE CLASSES ----------------------------------------------------------
 Bussiness_Applications = BusinessApplications(
-    r"fred_resources\fred_yamls\BusinessApplications.yml"
+    "fred_resources\fred_yamls\BusinessApplications.yml"
 )
 Construction_Employees = ConstructionEmployees(
     r"fred_resources\fred_yamls\ConstructionEmployees.yml"
