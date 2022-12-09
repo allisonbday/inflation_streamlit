@@ -12,7 +12,7 @@ import streamlit as st
 import plotly.express as px
 
 # YAML ------------------------------------------------------------------------
-yml = r"z_src\setup.yml"
+yml = r"setup.yml"
 with open(yml, "r") as file:
     dataMap = yaml.safe_load(file)
 
@@ -24,7 +24,7 @@ columns = dataMap["columns"]
 # FUNCTIONS -------------------------------------------------------------------
 @st.cache
 def read_unintermaster():
-    master = pd.read_csv(r"z_src\final_datasets\uninterpolated_master.csv")
+    master = pd.read_csv(r"final_datasets\uninterpolated_master.csv")
     master = master.drop(["Unnamed: 0"], axis=1)
     return master
 
@@ -65,30 +65,26 @@ st.title("Data Analysis")
 
 # INITIALIZE CLASSES ----------------------------------------------------------
 Bussiness_Applications = BusinessApplications(
-    r"z_src\fred_resources\fred_yamls\BusinessApplications.yml"
+    r"fred_resources\fred_yamls\BusinessApplications.yml"
 )
 Construction_Employees = ConstructionEmployees(
-    r"z_src\fred_resources\fred_yamls\ConstructionEmployees.yml"
+    r"fred_resources\fred_yamls\ConstructionEmployees.yml"
 )
 Construction_Wages = ConstructionWages(
-    r"z_src\fred_resources\fred_yamls\\ConstructionWages.yml"
+    r"fred_resources\fred_yamls\\ConstructionWages.yml"
 )
 HighPropriety_Businesses = HPBusinessApplications(
-    r"z_src\fred_resources\fred_yamls\\HPBusinessApplications.yml"
+    r"fred_resources\fred_yamls\\HPBusinessApplications.yml"
 )
-House_Price_Index = HousePriceIdx(r"z_src\fred_resources\fred_yamls\\HousePriceIdx.yml")
-New_Housing = NewHousingPermits(
-    r"z_src\fred_resources\fred_yamls\\NewHousingPermits.yml"
-)
-Real_GDP = RealGDP(r"z_src\fred_resources\fred_yamls\\RealGDP.yml")
+House_Price_Index = HousePriceIdx(r"fred_resources\fred_yamls\\HousePriceIdx.yml")
+New_Housing = NewHousingPermits(r"fred_resources\fred_yamls\\NewHousingPermits.yml")
+Real_GDP = RealGDP(r"fred_resources\fred_yamls\\RealGDP.yml")
 HighPropriety_NAICs = TotalHighPropensityNAICs(
-    r"z_src\fred_resources\fred_yamls\\TotalHighPropensityNAICs.yml"
+    r"fred_resources\fred_yamls\\TotalHighPropensityNAICs.yml"
 )
-NAICs = TotalNAICs(r"z_src\fred_resources\fred_yamls\\TotalNAICs.yml")
-Unemployment_Rate = Unemployment(r"z_src\fred_resources\fred_yamls\\unemployment.yml")
-Zillow_Home_Value = ZillowHomeValue(
-    r"z_src\fred_resources\fred_yamls\\ZillowHomeValue.yml"
-)
+NAICs = TotalNAICs(r"fred_resources\fred_yamls\\TotalNAICs.yml")
+Unemployment_Rate = Unemployment(r"fred_resources\fred_yamls\\unemployment.yml")
+Zillow_Home_Value = ZillowHomeValue(r"fred_resources\fred_yamls\\ZillowHomeValue.yml")
 
 # load data
 uninterMaster = read_unintermaster()
@@ -197,7 +193,7 @@ st.subheader("Sources Pulled")
 
 @st.cache
 def master_codes():
-    df = pd.read_csv(r"z_src\final_datasets\master_codes.csv")
+    df = pd.read_csv(r"final_datasets\master_codes.csv")
     # df = df.drop(["Unnamed: 0"], axis=1)
     df = df.groupby("Name")[
         "frequency", "units", "seasonal_adjustment", "title", "id"
