@@ -183,7 +183,7 @@ st.subheader("ML Model")
 
 
 def load_model(months):
-    model_path = path + "/models/XGBoost_{0}.pkl".format(months)
+    model_path = "XGBoost_{0}.pkl".format(months)
     model = pickle.load(open(model_path, "rb"))
     return model
 
