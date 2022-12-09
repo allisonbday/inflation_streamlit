@@ -110,7 +110,7 @@ st.title("United States Construction Inflation")
 
 # INITIALIZE CLASSES ----------------------------------------------------------
 Bussiness_Applications = BusinessApplications(
-    "fred_resources\fred_yamls\BusinessApplications.yml"
+    "https://github.com/allisonbday/inflation_streamlit/blob/467759ead7823e88ac7266637b5b472b9a83932c/fred_resources/fred_yamls/BusinessApplications.yml"
 )
 Construction_Employees = ConstructionEmployees(
     r"fred_resources\fred_yamls\ConstructionEmployees.yml"
