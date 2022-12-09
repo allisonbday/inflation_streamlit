@@ -14,7 +14,7 @@ st.image(
     width=100,
 )
 st.title("Machine Learning Model Explanation")
-path = os.path.dirname(__file__)
+path = os.path.join(os.path.dirname(__file__), "..")
 
 # IMPORTANCE ------------------------------------------------------------------
 st.header("Importance")
