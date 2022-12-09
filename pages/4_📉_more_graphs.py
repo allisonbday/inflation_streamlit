@@ -20,4 +20,4 @@ graph_list = os.listdir(path + "/graphs")
 
 st.write(f"Graphs list: {graph_list}")
 for graph in graph_list:
-    st.image(path + "/graphs/" + graph, caption=f"{graph}")
+    st.image(path + "/graphs/" + graph, caption=f"{graph}", use_column_width="always")
