@@ -63,7 +63,7 @@ st.image(
     width=100,
 )
 st.title("Data Analysis")
-path = os.path.dirname(__file__)
+path = os.path.join(os.path.dirname(__file__), "..")
 # INITIALIZE CLASSES ----------------------------------------------------------
 Bussiness_Applications = BusinessApplications(
     path + "/fred_resources/fred_yamls/BusinessApplications.yml"
