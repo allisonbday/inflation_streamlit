@@ -198,7 +198,7 @@ st.subheader("Sources Pulled")
 # checking something DELETE THIS COMMNET
 @st.cache
 def master_codes():
-    df = pd.read_csv(path + "final_datasets/master_codes.csv")
+    df = pd.read_csv(path + "/final_datasets/master_codes.csv")
     # df = df.drop(["Unnamed: 0"], axis=1)
     df = df.groupby("Name")[
         "frequency", "units", "seasonal_adjustment", "title", "id"
