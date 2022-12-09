@@ -1,7 +1,7 @@
 # IMPORTS ---------------------------------------------------------------------
 import pandas as pd
 import yaml
-import os 
+import os
 
 # classes
 from fred_resources.fredSubclasses import *
@@ -111,7 +111,7 @@ st.title("United States Construction Inflation")
 path = os.path.dirname(__file__)
 # INITIALIZE CLASSES ----------------------------------------------------------
 Bussiness_Applications = BusinessApplications(
-    path+"fred_resources\fred_yamls\BusinessApplications.yml"
+    path + r"/fred_resources\fred_yamls\BusinessApplications.yml"
 )
 Construction_Employees = ConstructionEmployees(
     r"fred_resources\fred_yamls\ConstructionEmployees.yml"
