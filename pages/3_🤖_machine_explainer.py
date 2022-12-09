@@ -1,5 +1,6 @@
 # IMPORTS ---------------------------------------------------------------------
 import pandas as pd
+import os
 
 # streamlit
 import streamlit as st
@@ -13,7 +14,7 @@ st.image(
     width=100,
 )
 st.title("Machine Learning Model Explanation")
-
+path = os.path.dirname(__file__)
 
 # IMPORTANCE ------------------------------------------------------------------
 st.header("Importance")
@@ -21,7 +22,7 @@ st.header("Importance")
 
 @st.cache
 def pull_importance():
-    df = pd.read_csv(r"models\tables\important_table.csv")
+    df = pd.read_csv(path + "/models/tables/important_table.csv")
     df = df.drop(columns=["Unnamed: 0"])
     return df
 
@@ -66,7 +67,7 @@ st.header("Metrics")
 
 @st.cache
 def pull_metrics():
-    df = pd.read_csv(r"models\tables\metrics_table.csv")
+    df = pd.read_csv(path + "/models/tables/metrics_table.csv")
     df = df.drop(columns=["Unnamed: 0"])
     return df
 

@@ -2,6 +2,7 @@
 import pandas as pd
 import yaml
 import time
+import os
 
 # classes
 from fred_resources.fredSubclasses import *
@@ -24,7 +25,7 @@ columns = dataMap["columns"]
 # FUNCTIONS -------------------------------------------------------------------
 @st.cache
 def read_unintermaster():
-    master = pd.read_csv(r"final_datasets\uninterpolated_master.csv")
+    master = pd.read_csv(path + "/final_datasets/uninterpolated_master.csv")
     master = master.drop(["Unnamed: 0"], axis=1)
     return master
 
@@ -62,29 +63,33 @@ st.image(
     width=100,
 )
 st.title("Data Analysis")
-
+path = os.path.dirname(__file__)
 # INITIALIZE CLASSES ----------------------------------------------------------
 Bussiness_Applications = BusinessApplications(
-    r"fred_resources\fred_yamls\BusinessApplications.yml"
+    path + "/fred_resources/fred_yamls/BusinessApplications.yml"
 )
 Construction_Employees = ConstructionEmployees(
-    r"fred_resources\fred_yamls\ConstructionEmployees.yml"
+    path + "/fred_resources/fred_yamls/ConstructionEmployees.yml"
 )
 Construction_Wages = ConstructionWages(
-    r"fred_resources\fred_yamls\\ConstructionWages.yml"
+    path + "/fred_resources/fred_yamls/ConstructionWages.yml"
 )
 HighPropriety_Businesses = HPBusinessApplications(
-    r"fred_resources\fred_yamls\\HPBusinessApplications.yml"
+    path + "/fred_resources/fred_yamls/HPBusinessApplications.yml"
 )
-House_Price_Index = HousePriceIdx(r"fred_resources\fred_yamls\\HousePriceIdx.yml")
-New_Housing = NewHousingPermits(r"fred_resources\fred_yamls\\NewHousingPermits.yml")
-Real_GDP = RealGDP(r"fred_resources\fred_yamls\\RealGDP.yml")
+House_Price_Index = HousePriceIdx(path + "/fred_resources/fred_yamls/HousePriceIdx.yml")
+New_Housing = NewHousingPermits(
+    path + "/fred_resources/fred_yamls/NewHousingPermits.yml"
+)
+Real_GDP = RealGDP(path + "/fred_resources/fred_yamls/RealGDP.yml")
 HighPropriety_NAICs = TotalHighPropensityNAICs(
-    r"fred_resources\fred_yamls\\TotalHighPropensityNAICs.yml"
+    path + "/fred_resources/fred_yamls/TotalHighPropensityNAICs.yml"
 )
-NAICs = TotalNAICs(r"fred_resources\fred_yamls\\TotalNAICs.yml")
-Unemployment_Rate = Unemployment(r"fred_resources\fred_yamls\\unemployment.yml")
-Zillow_Home_Value = ZillowHomeValue(r"fred_resources\fred_yamls\\ZillowHomeValue.yml")
+NAICs = TotalNAICs(path + "/fred_resources/fred_yamls/TotalNAICs.yml")
+Unemployment_Rate = Unemployment(path + "/fred_resources/fred_yamls/unemployment.yml")
+Zillow_Home_Value = ZillowHomeValue(
+    path + "/fred_resources/fred_yamls/ZillowHomeValue.yml"
+)
 
 # load data
 uninterMaster = read_unintermaster()
