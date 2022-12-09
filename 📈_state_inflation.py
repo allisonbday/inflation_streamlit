@@ -111,7 +111,7 @@ st.title("United States Construction Inflation")
 path = os.path.dirname(__file__)
 # INITIALIZE CLASSES ----------------------------------------------------------
 Bussiness_Applications = BusinessApplications(
-    path + r"/fred_resources\fred_yamls\BusinessApplications.yml"
+    path + "/fred_resources/fred_yamls/BusinessApplications.yml"
 )
 Construction_Employees = ConstructionEmployees(
     r"fred_resources\fred_yamls\ConstructionEmployees.yml"
