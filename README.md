@@ -1,1 +1,1 @@
-# inflation_streamlit
+# streamlit_inflation
