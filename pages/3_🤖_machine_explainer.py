@@ -22,7 +22,7 @@ st.header("Importance")
 
 @st.cache
 def pull_importance():
-    df = pd.read_csv(path + "important_table.csv")
+    df = pd.read_csv(path + "/important_table.csv")
     df = df.drop(columns=["Unnamed: 0"])
     return df
 
@@ -67,7 +67,7 @@ st.header("Metrics")
 
 @st.cache
 def pull_metrics():
-    df = pd.read_csv(path + "metrics_table.csv")
+    df = pd.read_csv(path + "/metrics_table.csv")
     df = df.drop(columns=["Unnamed: 0"])
     return df
 
