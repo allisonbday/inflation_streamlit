@@ -1,6 +1,7 @@
 # IMPORTS ---------------------------------------------------------------------
 import pandas as pd
 import yaml
+import os 
 
 # classes
 from fred_resources.fredSubclasses import *
@@ -107,10 +108,10 @@ st.image(
     width=100,
 )
 st.title("United States Construction Inflation")
-
+path = os.path.dirname(__file__)
 # INITIALIZE CLASSES ----------------------------------------------------------
 Bussiness_Applications = BusinessApplications(
-    "https://github.com/allisonbday/inflation_streamlit/blob/467759ead7823e88ac7266637b5b472b9a83932c/fred_resources/fred_yamls/BusinessApplications.yml"
+    path+"fred_resources\fred_yamls\BusinessApplications.yml"
 )
 Construction_Employees = ConstructionEmployees(
     r"fred_resources\fred_yamls\ConstructionEmployees.yml"
