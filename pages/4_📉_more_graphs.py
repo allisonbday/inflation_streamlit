@@ -19,5 +19,6 @@ path = os.path.join(os.path.dirname(__file__), "..")
 #
 graph_list = os.listdir(path + "/graphs")
 
+st.write(f"Graphs list: {graph_list}")
 for graph in graph_list:
     st.image(graph)
