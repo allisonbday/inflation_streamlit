@@ -27,6 +27,8 @@ def pull_importance():
     return df
 
 
+# checking something
+
 importance_df = pull_importance()
 st.dataframe(importance_df)
 
