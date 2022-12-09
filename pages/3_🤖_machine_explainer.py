@@ -76,9 +76,3 @@ def pull_metrics():
 
 metrics_df = pull_metrics()
 st.dataframe(metrics_df)
-
-st.markdown(
-    """
-    You can write in markdown here
-    """
-)
